@@ -1,0 +1,27 @@
+{% extends 'produtos/base.html' %}
+
+{% block titulo %}Produtos{% endblock %}
+
+{% block content %}
+<h1>Produtos cadastrados</h1>
+<table border="1" cellpadding="6">
+    <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Validade</th>
+    </tr>
+    {% for produto in produtos %}
+    <tr>
+        <td>{{ produto.nome }}</td>
+        <td>{{ produto.descricao }}</td>
+        <td>R$ {{ produto.preco }}</td>
+        <td>{{ produto.validade|date:"d/m/Y" }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">Nenhum produto cadastrado.</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
