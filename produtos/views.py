@@ -16,9 +16,12 @@ def produto_new(request):
             return redirect('produto_new')
     else:
         form = RegistroForm()
-    return render(request, 'produtos/registro_form.html', {'form': form})
+    return render(request, 'produtos/resgistro_form.html', {'form': form})
 
 
 def produto_list(request):
     produtos = Produto.objects.order_by('nome')
     return render(request, 'produtos/list.html', {'produtos': produtos})
+
+def home(request):
+    return render(request, 'produtos/index.html')
