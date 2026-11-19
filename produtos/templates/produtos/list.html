@@ -14,8 +14,8 @@
     {% for produto in produtos %}
     <tr>
         <td>{{ produto.nome }}</td>
-        <td>{{ produto.descricao }}</td>
-        <td>R$ {{ produto.preco }}</td>
+        <td>{{ produto.descrição }}</td>
+        <td>R$ {{ produto.preço }}</td>
         <td>{{ produto.validade|date:"d/m/Y" }}</td>
     </tr>
     {% empty %}
